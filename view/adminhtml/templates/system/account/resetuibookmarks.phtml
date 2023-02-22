@@ -1,0 +1,45 @@
+<?php
+/**
+ * @var $block \Magento\Backend\Block\Template
+ * @var $escaper \Magento\Framework\Escaper
+ */
+?>
+<div class="gu-resetuibookmarks">
+    <div class="divider"></div>
+    <fieldset class="fieldset admin__fieldset " id="gu_resetuibookmarks">
+
+        <legend class="admin__legend hide">
+            <span><?= $escaper->escapeHtml(__('Reset UI Bookmarks')) ?></span>
+        </legend><br>
+
+        <div class="admin__field">
+
+            <label class="label admin__field-label hide"></label>
+
+            <div class="admin__field-control control ml0 w100">
+
+                <form action="<?= $escaper->escapeUrl($block->getUrl(
+                    'gu_resetuibookmarks/reset/index',
+                    ['_current' => true, '_use_rewrite' => true]
+                )) ?>" method="get">
+
+                    <button id="reset" title="Reset UI Bookmarks" type="submit" class="action-default scalable button-danger" role="button" aria-disabled="false">
+                        <span><?= $escaper->escapeHtml(__('Reset UI Bookmarks')) ?></span>
+                    </button>
+
+                    <select id="identifier" name="gu_resetuibookmarks[identifier]" title="Identifier" class="select select admin__control-select ignore-validate">
+                        <option value="saved-exclude"><?= $escaper->escapeHtml(__('Keep Saved Filters')) ?></option>
+                        <option value="saved-only"><?= $escaper->escapeHtml(__('Saved Filters Only')) ?></option>
+                        <option value="all"><?= $escaper->escapeHtml(__('All Bookmarks')) ?></option>
+                    </select>
+
+                    <input type="hidden" name="gu_resetuibookmarks[userId]" value="<?= $escaper->escapeHtml($block->getData('userId')); ?>" class="ignore-validate" />
+                </form>
+
+                <span class="hint">
+                    <?= $escaper->escapeHtml(__('This will reset UI bookmarks such as state of filters, column positions, grid sorting, pagination and so on.')) ?>
+                </span>
+            </div>
+        </div>
+    </fieldset>
+</div>

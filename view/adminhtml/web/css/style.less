@@ -1,0 +1,60 @@
+@divider: #e3e3e3;
+@button-color: #fff;
+@button-background-color: #eb5202;
+@button-border-color: #eb5202;
+@button-background-color-hover: #ba4000;
+@button-border-color-hover: #b84002;
+
+.gu-resetuibookmarks {
+
+    .hint {
+        display: block;
+        margin-top: 10px;
+    }
+
+    .divider {
+        background: @divider;
+        height: 1px;
+        margin: 20px 0;
+    }
+
+    .button-danger {
+        background: @button-background-color;
+        border-color: @button-border-color;
+        color: @button-color;
+        text-decoration: none;
+        text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25);
+
+        &:hover, &:active, &:focus {
+            background: @button-background-color-hover;
+            border-color: @button-border-color-hover;
+        }
+    }
+
+    select {
+        margin-left: 0.5em;
+    }
+}
+
+#reset_ui_bookmarks {
+
+    .divider {
+        display: none;
+    }
+
+    .hide {
+        display: none !important;
+    }
+
+    .ml0 {
+        margin-left: 0 !important;
+    }
+
+    .w100 {
+        width: 100% !important;
+    }
+
+    .admin__field {
+        margin-left: 0 !important;
+    }
+}
